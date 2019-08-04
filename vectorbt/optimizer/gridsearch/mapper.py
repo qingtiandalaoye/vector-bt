@@ -2,7 +2,12 @@ import itertools
 from timeit import default_timer as timer
 
 import psutil
-from multiprocess import Pool
+
+try:
+    import _multiprocess as Pool
+except ImportError:
+    import _multiprocessing  as Pool
+
 
 
 def map(func, params, multiprocess=False, processes=psutil.cpu_count() - 1):
