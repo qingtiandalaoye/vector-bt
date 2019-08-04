@@ -4,7 +4,7 @@ from timeit import default_timer as timer
 
 import pandas as pd
 import pytz
-from poloniex import Poloniex
+#from poloniex import Poloniex
 
 
 # Load pair
@@ -34,6 +34,11 @@ def dt_to_ts(date):
     """Date to timestamp"""
     return int(date.timestamp())
 
+def load_cryptopair(pair, from_dt, to_dt, period=Period.D1):
+	return None
+	
+'''
+
 
 def load_cryptopair(pair, from_dt, to_dt, period=Period.D1):
     """Load OHLC data on a cryptocurrency pair from Poloniex exchange"""
@@ -51,3 +56,4 @@ def load_cryptopair(pair, from_dt, to_dt, period=Period.D1):
     chart_df = chart_df.astype(float)
     chart_df.rename(columns={'open': 'O', 'high': 'H', 'low': 'L', 'close': 'C', 'volume': 'V'}, inplace=True)
     return chart_df[['O', 'H', 'L', 'C', 'V']]
+'''
